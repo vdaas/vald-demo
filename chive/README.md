@@ -27,3 +27,9 @@ agent:
     dimension: 300
     distance_type: cos
 ```
+
+### run docker
+
+```
+docker run --user root -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e UB_UID=root -e GRANT_SUDO=yes jupyter/datascience-notebook
+```
