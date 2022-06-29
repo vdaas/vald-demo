@@ -31,5 +31,5 @@ agent:
 ### run docker
 
 ```
-docker run --user root -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e UB_UID=root -e GRANT_SUDO=yes jupyter/datascience-notebook
-```
+# use python-3.7.6 image because magnitude does not apply new python version. (2022-06)
+docker run --user root -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e UB_UID=root -e GRANT_SUDO=yes jupyter/datascience-notebook:python-3.7.6
