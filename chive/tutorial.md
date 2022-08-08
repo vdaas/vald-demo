@@ -22,7 +22,7 @@
 ※***このnotebookは, 既に[Get Started](https://vald.vdaas.org/docs/tutorial/get-started/)を完了し, Valdの環境構築が完了した方を対象としています.  
 まだValdの環境構築がお済みでない方は, 先に[Get Started](https://vald.vdaas.org/docs/tutorial/get-started/)を行うことを推奨します.  
 また, データセットとしてchiVeを利用する場合, Vald Agentのdimensionを300に, distance_typeをcosineにすることを推奨するため, [sample-values.yaml](https://github.com/vdaas/vald-demo/blob/main/chive/sample-values.yaml)を用いる or 値を修正したvalues.yamlを用いてValdの構築を行ってください.***  
-- *dimension: 300, distance_type: consieの修正例 ([path/to/helm/values.yaml](https://github.com/vdaas/vald/blob/master/example/helm/values.yaml#L45-L49))*:
+- *dimension: 300, distance_type: consieの修正例 ([path/to/helm/values.yaml](https://github.com/vdaas/vald/blob/main/example/helm/values.yaml#L45-L49))*:
 ```yaml
 agent:
   ngt:
