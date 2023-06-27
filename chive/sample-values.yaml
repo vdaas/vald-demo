@@ -35,14 +35,13 @@ gateway:
       requests:
         cpu: 150m
         memory: 150Mi
-  backup:
-    enabled: false
-  meta:
-    enabled: false
+    gateway_config:
+      # The number of index replica
+      index_replica: 2
 
 agent:
-  minReplicas: 5
-  maxReplicas: 5
+  minReplicas: 3
+  maxReplicas: 3
   # Set Parallel to podManagementPolicy is not recommended for production.
   # In this time, it is just an example, we set Parallel to podManagementPolicy.
   podManagementPolicy: Parallel
@@ -58,9 +57,9 @@ agent:
     # The type of fashion-mnist's feature vectors.
     object_type: float
     # Check duration of automatic indexing.
-    auto_index_check_duration_limit: 1m
+    auto_index_check_duration_limit: "-1m"
     # The limit duration of automatic indexing.
-    auto_index_duration_limit: 20s
+    auto_index_duration_limit: "-20s"
     # The batch process pool size of automatic create index operation
     auto_create_index_pool_size: 100
     # The default create index batch pool size
@@ -83,12 +82,5 @@ manager:
       # This trigger the force indexing on each Vald Agent.
       auto_index_duration_limit: 1m
       # The check duration of automatic indexing.
-      # This trigger the indexing on each Vald Agnet if the uncommitted index exceeds the limit.
+      # This trigger the indexing on each Vald Agent if the uncommitted index exceeds the limit.
       auto_index_check_duration: 40s
-  backup:
-    enabled: false
-  compressor:
-    enabled: false
-
-meta:
-  enabled: false
