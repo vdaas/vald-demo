@@ -1,18 +1,24 @@
 # Vald Similarity Search using chiVe Dataset
 
-This example is showing the text similarity search example with [chiVe](https://github.com/WorksApplications/chiVe) dataset.
+This example shows the text similarity search example with [chiVe](https://github.com/WorksApplications/chiVe) dataset.
 
-It uses [the Vald cluster for search engine and Jupyter Notebook for running example.
+It uses the Vald cluster for the search engine and Jupyter Notebook for running an example.
 
 ## Requirements
+
+**_NOTE: It is recommended to do ["Get Started"](https://vald.vdaas.org/docs/tutorial/get-started/) before running Notebook._**
+
+To execute this example, it requires the Vald cluster.
+
+- [Vald](https://github.com/vdaas/vald)
+
+And the following requirements will be installed when executing the example.
 
 - [chiVe](https://github.com/WorksApplications/chiVe)
 - [gRPC](https://grpc.io/)
 - [Magnitude](https://github.com/plasticityai/magnitude)
-- [Vald](https://github.com/vdaas/vald)
 - [vald-client-python](https://github.com/vdaas/vald-client-python)
 
-**_NOTE: It is recommended to do ["Get Started"](https://vald.vdaas.org/docs/tutorial/get-started/) before running notebook._**
 
 ## How it works
 
@@ -22,7 +28,7 @@ It uses [the Vald cluster for search engine and Jupyter Notebook for running exa
 
    ```bash
    # verify
-   $ kubectl get cluster-info
+   kubectl get cluster-info
    ```
 
 1. Add Vald charts to Helm repo
@@ -31,7 +37,7 @@ It uses [the Vald cluster for search engine and Jupyter Notebook for running exa
    helm repo add vald https://vald.vdaas.org/charts
    ```
 
-1. Deploy Vald cluster
+1. Deploy the Vald cluster
 
    ```bash
    helm install vald vald/vald --values path/to/helm/values.yaml
@@ -55,9 +61,9 @@ It uses [the Vald cluster for search engine and Jupyter Notebook for running exa
 
 ### Run Jupyter Notebook on Docker
 
-1. Download dataset
+1. Download the dataset
 
-   Before running docker image, please download Magnitude dataset.
+   Before running the Docker image, please download the chiVe dataset applied for Magnitude.
 
    ```bash
    curl "https://sudachi.s3-ap-northeast-1.amazonaws.com/chive/chive-1.2-mc90.magnitude" -o "chive-1.2-mc90.magnitude"
@@ -65,16 +71,16 @@ It uses [the Vald cluster for search engine and Jupyter Notebook for running exa
 
 1. Verify the endpoint of Vald cluster
 
-   This example requires the Vald cluster endpoint to send requests from Jupyter Notebook to the Vald cluster.
+   This example requires the Vald cluster endpoint to send requests from Jupyter Notebook.
    Please verify your cluster endpoint.
 
-   - If enabled ingress, you can use ingress host and port.
+   - If Kubernetes ingress is enabled, you can use ingress host and port.
 
      ```bash
      kubectl get ingress
      ```
 
-   - If disabled ingress, you can use the endpoint by executing `kubectl port-forward`.
+   - If disabled, you can use the endpoint by executing `kubectl port-forward`.
      ```bash
      # port-forward (the endpoint will be {host ip}:8081)
      kubectl port-forward svc/vald-lb-gateway 8081:8081
@@ -83,7 +89,7 @@ It uses [the Vald cluster for search engine and Jupyter Notebook for running exa
 1. Run Jupyter Notebook on Docker
 
    ```bash
-   # use python-3.7.6 image because magnitude does not apply new python version. (2022-06)
+   # use python-3.7.6 image because Magnitude DOES NOT apply new python version. (2022-06)
    docker run --user root -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e UB_UID=root -e GRANT_SUDO=yes jupyter/datascience-notebook:python-3.7.6
    ```
 
@@ -91,7 +97,7 @@ It uses [the Vald cluster for search engine and Jupyter Notebook for running exa
 
 1. Access via browser
 
-1. Select Notebook and execute example
+1. Select Notebook and execute the example
 
 <div align="center">
     <img src="./chive-demo.gif" width="100%" />
@@ -99,6 +105,6 @@ It uses [the Vald cluster for search engine and Jupyter Notebook for running exa
 
 ### Cleanup
 
-1. Stop Docker container by `Ctrl-C`.
+1. Stop the Docker container by `Ctrl-C`.
 
-1. Delete Vald cluster by `helm uninstall vald`.
+1. Delete Vald cluster by `helm uninstall vald` or according to the method you deployed.

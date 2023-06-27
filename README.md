@@ -1,8 +1,8 @@
 # Vald Demo
 
-Vald is a highly scalable distributed fast approximate nearest neighbor dense vector search engine.
+Vald is a highly scalable, distributed, fast approximate nearest neighbor dense vector search engine.
 
-This repository shows the example use cases with common dataset.
+This repository shows example use cases with standard datasets.
 
 Please follow the example list and try examples.
 
@@ -14,7 +14,7 @@ Please follow the example list and try examples.
 - Helm: v3~
 - Docker: v20~
 
-There are individual requirements for each tutorial, so please refer to each document for details.
+Each tutorial has individual requirements, so please refer to each document for details.
 
 ## Example Contents
 
