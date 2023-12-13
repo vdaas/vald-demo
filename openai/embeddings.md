@@ -84,7 +84,7 @@ Vald is an extremely fast and highly available OSS approximate neighborhood vect
 It can quickly search for k vectors near a vector given as a query from a set of vectors already stored.
 
 Using this figure as an example, if a vector of "Apple" is given as a query, the distance between the query vector and the id of nearby "Persimmon," "Cherries," and "Strawberry" is returned.
-![Search Image](./1.png)
+![Search Image](./search.png)
 
 Prepare the equipment by referring to the [Get Started](https://vald.vdaas.org/docs/tutorial/get-started/).
 
