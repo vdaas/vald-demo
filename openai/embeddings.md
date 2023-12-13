@@ -182,15 +182,6 @@ text: IBM Chips May Someday Heal Themselves New technology applies electrical fu
 text: Inspector Google solves the crime It #39;s normally employed to drum up that missing address, phone number or website, or to check facts, dates, names and other miscellany., distance: 0.6543369293212891
 ```
 
-The results when using the multilingual model paraphrase-multilingual-mpnet-base-v2 with sentence-transformers are shown below. The OpenAI Embeddings API seems to be more capable of understanding deeper meanings.
-```
-text: Fellowship of the Customized  Ring Tone In a short time, in a public way -- while on Metro, or in line at Starbucks, or inside a movie theater -- ring tones signal who you are. Or who you want people to think you are.&lt;FONT face="verdana,MS Sans Serif,arial,helvetica" size="-2" color="#666666"&gt;&lt;B&gt;-The Washington Post&lt;/B&gt;&lt;/FONT&gt;, distance: 3.4075895675507817
-
-text: Columnists: Simple and Secure isn't so Simple Simple to code does not always mean simple for the user. And simple for the user is often not easy to code., distance: 3.4140256203930988
-
-text: Sign off, then sign in  G. Michael Caggiano Jr. lies awake at night thinking about bank signs. He ponders them during breakfast, while brushing his teeth, and  quot;constantly quot; during the day, he says., distance: 3.433765865459145
-```
-
 
 ## Why use a vector search engine?
 Some may argue that a vector search engine may be unnecessary if vector distance calculations are done within the application.
